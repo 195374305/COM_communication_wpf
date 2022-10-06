@@ -1,1 +1,6 @@
-# COM_communication
+# COM口发送读取程序
+# 把接收到的信息存到MSMQ消息队列
+
+![123.png](123.png)
+
+
