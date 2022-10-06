@@ -25,7 +25,7 @@
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border MouseMove="Grid_MouseMove" Grid.ColumnSpan="2" Background="Transparent" />
+        <Border MouseDown="Grid_MouseMove" Grid.ColumnSpan="2" Background="Transparent" />
         <RichTextBox Grid.Row="2">
             <FlowDocument>
                 <Paragraph>
