@@ -12,7 +12,7 @@
             <GradientStop Color="Red" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>     
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -26,31 +26,26 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border MouseDown="Grid_MouseMove" Grid.ColumnSpan="2" Background="Transparent" />
-        <RichTextBox Grid.Row="2">
-            <FlowDocument>
-                <Paragraph>
-                    <Run x:Name="richTextBox1"  Text="需要发送的字段..."/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <RichTextBox Grid.Row="4">
-            <FlowDocument>
-                <Paragraph>
-                    <Run x:Name="richTextBox2" Text="接收到的字段..."/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <TextBox x:Name="richTextBox1" Grid.Row="2" BorderThickness="0" FontWeight="Bold" Text="需要发送到对端的数据"/>
+        <TextBox x:Name="richTextBox2" Grid.Row="4" BorderThickness="0" FontWeight="Bold" Text="接收到对端的数据"/>
         <TextBlock TextWrapping="Wrap" Grid.Row="1" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="White"><Run Language="zh-cn" Text="写"/></TextBlock>
         <TextBlock TextWrapping="Wrap" Grid.Row="3" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontWeight="Bold"><Run Language="zh-cn" Text="读"/></TextBlock>
         <Button Grid.Column="1" Content="刷新COM口" HorizontalAlignment="Center" Margin="0,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click" ToolTip="刷新该主机可以选择的COM口"/>
         <ComboBox x:Name="comboBox1" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Width="115"/>
         <CheckBox x:Name="checkBox1" Grid.Column="1" Grid.Row="2" Content="保存到消息队列" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,0,0" Width="116" HorizontalContentAlignment="Center" Foreground="White" ToolTip="把接收到的信息存入消息队列"/>
-        <Button x:Name="dakai_button" Grid.Column="1" Content="打开端口" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_1"/>
-        <Button Grid.Column="1" Content="发送" HorizontalAlignment="Center" Margin="0,185,0,0" Grid.Row="2" VerticalAlignment="Bottom" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_2">
-            
-        </Button>
-        <Button Grid.Column="1"  Content="测试队列信息" HorizontalAlignment="Center" Margin="0,185,0,0" Grid.Row="4" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_3" VerticalAlignment="Bottom" ToolTip="读取该机消息队列到MessageBox"/>
-        <Button Grid.Column="1" Content="消息队列存入信息" HorizontalAlignment="Center" Margin="0,0,0,24" Grid.Row="4" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_4" VerticalAlignment="Bottom" ToolTip="测试能否存入消息到该机队列"/>
+        <Button x:Name="dakai_button" Grid.Column="1" Content="打开端口" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="2" VerticalAlignment="Top" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_1" ToolTip="打开端口后实时接收信息"/>
+        <Border   Grid.Column="1" Grid.Row="2" CornerRadius="8" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="#FF4A9B92" BorderThickness="3">
+            <Border.Effect>
+                <DropShadowEffect Direction="227" BlurRadius="14" ShadowDepth="9" Opacity="0.625"/>
+            </Border.Effect>
+            <Button x:Name="button"  Content="发送" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_2" Background="Transparent" BorderBrush="Transparent" Foreground="Black"/>
+        </Border>
+        <Expander Height="100" Header="调试功能" Grid.Row="4" Grid.Column="1" FontWeight="Bold" Foreground="White" VerticalAlignment="Bottom" ExpandDirection="Up">
+            <Grid Background="#FFE5E5E5">
+                <Button Content="测试队列信息" HorizontalAlignment="Center" Width="116" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_3" VerticalAlignment="Top" ToolTip="读取该机消息队列到MessageBox" Height="20"/>
+                <Button Content="消息队列存入信息" HorizontalAlignment="Center" Width="115" FontWeight="Bold" HorizontalContentAlignment="Center" Click="Button_Click_4" ToolTip="测试能否能存入消息到该机消息队列" Margin="0,25,0,32" Height="20"/>
+            </Grid>
+        </Expander>
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -60,5 +55,4 @@
             <TextBlock x:Name="toolStripStatusLabel2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" FontWeight="Bold" Foreground="White"><Run Language="zh-cn" Text="队列信息状态"/></TextBlock>
         </Grid>
     </Grid>
-    
 </Window>

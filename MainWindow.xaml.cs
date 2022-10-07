@@ -84,24 +84,30 @@ namespace COM_communication
         }
 
 
+
         private void Read()
         {
+            bool? temp_checkBox1=false;
             while (true)
             {
                 try
-                {
+                {                    
+                    Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        temp_checkBox1 = checkBox1.IsChecked;
+                    }));
                     string message = _serialPort.ReadLine();
-                    richTextBox2.Text += message;
+                    Dispatcher.Invoke(new Action(delegate { richTextBox2.Text += message; }));
                     if (message != null)
                     {
-                        if (checkBox1.IsChecked == true)//判断是否开启消息队列
+                        if (temp_checkBox1 == true)//判断是否开启消息队列
                         {
-                            toolStripStatusLabel2.Text = "准备写入消息队列...";
+                            Dispatcher.Invoke(new Action(delegate { toolStripStatusLabel2.Text = "准备写入消息队列..."; }));
                             try
                             {
                                 MessageQueue myQueue1 = MessageQueue.Exists(".\\Private$\\myQueue") ? new MessageQueue(".\\Private$\\myQueue") : MessageQueue.Create(".\\Private$\\myQueue");
                                 myQueue1.Send(message);
-                                toolStripStatusLabel2.Text = "成功写入消息队列";
+                                Dispatcher.Invoke(new Action(delegate { toolStripStatusLabel2.Text = "成功写入消息队列"; }));
                             }
                             catch (Exception)
                             {
