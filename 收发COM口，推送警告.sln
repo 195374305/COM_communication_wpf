@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COM_communication", "COM_communication.csproj", "{7E966D0F-EFAE-43E6-8BB3-854367DFD45A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sendToSerial", "..\ConsoleApp1\ConsoleApp1\sendToSerial.csproj", "{8389D095-983D-4265-8BBE-B4FC7C6F3A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushMessageToWechat_Console", "..\PushMessageToWechat_Console\PushMessageToWechat_Console\PushMessageToWechat_Console.csproj", "{BB5C3010-0D75-4FA0-B6C3-50DEA5A303BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7E966D0F-EFAE-43E6-8BB3-854367DFD45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E966D0F-EFAE-43E6-8BB3-854367DFD45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E966D0F-EFAE-43E6-8BB3-854367DFD45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8389D095-983D-4265-8BBE-B4FC7C6F3A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8389D095-983D-4265-8BBE-B4FC7C6F3A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8389D095-983D-4265-8BBE-B4FC7C6F3A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8389D095-983D-4265-8BBE-B4FC7C6F3A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5C3010-0D75-4FA0-B6C3-50DEA5A303BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5C3010-0D75-4FA0-B6C3-50DEA5A303BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5C3010-0D75-4FA0-B6C3-50DEA5A303BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5C3010-0D75-4FA0-B6C3-50DEA5A303BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
