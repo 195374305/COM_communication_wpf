@@ -97,7 +97,7 @@ namespace COM_communication
                         temp_checkBox1 = checkBox1.IsChecked;
                     }));
                     string message = _serialPort.ReadLine();
-                    Dispatcher.Invoke(new Action(delegate { richTextBox2.Text += message; }));
+                    Dispatcher.Invoke(new Action(delegate { richTextBox2.Text = message; }));
                     if (message != null)
                     {
                         if (temp_checkBox1 == true)//判断是否开启消息队列
